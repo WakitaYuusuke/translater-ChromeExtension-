@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"author": "Yuusuke Wakita",
+	"homepage_url": "http://example.com",
+	"name": "translater",
+	"description": "a selected word will be trannslated to japanese from english",
+	"version": "1.0",
+	"icons": {
+		"32": "icon/zisyo_icon.png",
+		"48": "icon/zisyo_icon.png",
+		"128": "icon/zisyo_icon.png"
+	},
+	"browser_action": {
+		"default_icon": "icon/zisyo_icon.png",
+    "default_popup": "popup.html",
+		"default_title": ""
+	},
+	"content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["js/jquery-3.2.1.min.js", "js/wordGetter.js"]
+  }
+],
+	"content_security_policy": "script-src 'self' https://query.yahooapis.com; object-src 'self'"
+}
